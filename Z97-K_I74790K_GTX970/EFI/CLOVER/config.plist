@@ -104,9 +104,9 @@
 		<key>Arguments</key>
 		<string>keepsyms=1 dart=0 debug=0x100 shikigva=40 nvda_drv=1</string>
 		<key>DefaultVolume</key>
-		<string>LastBootedVolume</string>
+		<string>mac</string>
 		<key>Timeout</key>
-		<integer>5</integer>
+		<integer>3</integer>
 		<key>XMPDetection</key>
 		<string>Yes</string>
 	</dict>
