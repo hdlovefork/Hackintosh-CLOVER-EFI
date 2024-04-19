@@ -8,7 +8,7 @@
             <array>
                 <dict>
                     <key>Comment</key>
-                    <string></string>
+                    <string>USB</string>
                     <key>Enabled</key>
                     <true/>
                     <key>Path</key>
@@ -16,7 +16,7 @@
                 </dict>
                 <dict>
                     <key>Comment</key>
-                    <string></string>
+                    <string>AWAC</string>
                     <key>Enabled</key>
                     <true/>
                     <key>Path</key>
@@ -24,7 +24,7 @@
                 </dict>
                 <dict>
                     <key>Comment</key>
-                    <string></string>
+                    <string>CPU Power Management</string>
                     <key>Enabled</key>
                     <true/>
                     <key>Path</key>
@@ -32,19 +32,11 @@
                 </dict>
                 <dict>
                     <key>Comment</key>
-                    <string></string>
+                    <string>NVRAM Related</string>
                     <key>Enabled</key>
                     <true/>
                     <key>Path</key>
                     <string>SSDT-PMCR.aml</string>
-                </dict>
-                <dict>
-                    <key>Comment</key>
-                    <string>ASUS/MSI USB Fix</string>
-                    <key>Enabled</key>
-                    <true/>
-                    <key>Path</key>
-                    <string>SSDT-RHUB.aml</string>
                 </dict>
             </array>
             <key>Delete</key>
@@ -115,11 +107,11 @@
                 <key>ProvideMaxSlide</key>
                 <integer>0</integer>
                 <key>RebuildAppleMemoryMap</key>
-                <false/>
+                <true/>
                 <key>ResizeAppleGpuBars</key>
                 <integer>-1</integer>
                 <key>SetupVirtualMap</key>
-                <false/>
+                <true/>
                 <key>SignalAppleOS</key>
                 <false/>
                 <key>SyncRuntimePermissions</key>
@@ -130,6 +122,42 @@
         <dict>
             <key>Add</key>
             <dict>
+                <key>##PciRoot(0x0)/Pci(0x2,0x0)</key>
+                <dict>
+                    <key>#备注</key>
+                    <string>使用时记得去掉中文注释内容</string>
+                    <key>#推荐机型</key>
+                    <string>iMac20,1</string>
+                    <key>#适用</key>
+                    <string>使用核显辅助独显硬解加速</string>
+                    <key>AAPL,ig-platform-id</key>
+                    <data>AwDFmw==</data>
+                    <key>device-id</key>
+                    <data>xZsAAA==</data>
+                    <key>model</key>
+                    <string>Intel UHD Graphics 630</string>
+                </dict>
+                <key>#PciRoot(0x0)/Pci(0x2,0x0)</key>
+                <dict>
+                    <key>#ig-platform-id备选方案</key>
+                    <string>00009B3E</string>
+                    <key>#备注</key>
+                    <string>使用时记得去掉中文注释内容</string>
+                    <key>#推荐机型</key>
+                    <string>iMac19,1或Macmini8,1</string>
+                    <key>#适用</key>
+                    <string>无独显，使用核显作为主显卡，视频输出</string>
+                    <key>AAPL,ig-platform-id</key>
+                    <data>BwCbPg==</data>
+                    <key>device-id</key>
+                    <data>mz4AAA==</data>
+                    <key>framebuffer-patch-enable</key>
+                    <data>AQAAAA==</data>
+                    <key>framebuffer-stolenmem</key>
+                    <data>AAAwAQ==</data>
+                    <key>model</key>
+                    <string>Intel UHD Graphics 630</string>
+                </dict>
                 <key>PciRoot(0x0)/Pci(0x1F,0x3)</key>
                 <dict>
                     <key>layout-id</key>
@@ -138,7 +166,7 @@
                 <key>PciRoot(0x0)/Pci(0x2,0x0)</key>
                 <dict>
                     <key>AAPL,ig-platform-id</key>
-                    <data>EjRWeA==</data>
+                    <data>eFY0Eg==</data>
                 </dict>
             </dict>
             <key>Delete</key>
@@ -154,7 +182,7 @@
                     <key>BundlePath</key>
                     <string>Lilu.kext</string>
                     <key>Comment</key>
-                    <string>V1.6.3 | Patch engine</string>
+                    <string>V1.6.4 | Patch engine</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
@@ -226,7 +254,7 @@
                     <key>BundlePath</key>
                     <string>WhateverGreen.kext</string>
                     <key>Comment</key>
-                    <string>V1.6.3</string>
+                    <string>V1.6.4</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
@@ -244,7 +272,7 @@
                     <key>BundlePath</key>
                     <string>AppleALC.kext</string>
                     <key>Comment</key>
-                    <string>V1.7.8 | Audio patches</string>
+                    <string>V1.7.9 | Audio patches</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
@@ -262,7 +290,7 @@
                     <key>BundlePath</key>
                     <string>IntelMausi.kext</string>
                     <key>Comment</key>
-                    <string>V1.0.8 |</string>
+                    <string>V1.0.8 | Intel Network Card</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
@@ -322,9 +350,27 @@
                     <key>ExecutablePath</key>
                     <string>Contents/MacOS/LucyRTL8125Ethernet</string>
                     <key>MaxKernel</key>
-                    <string>19.99.99</string>
+                    <string></string>
                     <key>MinKernel</key>
                     <string>19.0.0</string>
+                    <key>PlistPath</key>
+                    <string>Contents/Info.plist</string>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>BundlePath</key>
+                    <string>BlueToolFixup.kext</string>
+                    <key>Comment</key>
+                    <string>V2.6.5</string>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>ExecutablePath</key>
+                    <string>Contents/MacOS/BlueToolFixup</string>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string>21.0.0</string>
                     <key>PlistPath</key>
                     <string>Contents/Info.plist</string>
                 </dict>
@@ -366,7 +412,7 @@
                 </dict>
                 <dict>
                     <key>Arch</key>
-                    <string>Any</string>
+                    <string>x86_64</string>
                     <key>BundlePath</key>
                     <string>RestrictEvents.kext</string>
                     <key>Comment</key>
@@ -378,7 +424,7 @@
                     <key>MaxKernel</key>
                     <string></string>
                     <key>MinKernel</key>
-                    <string></string>
+                    <string>19.0.0</string>
                     <key>PlistPath</key>
                     <string>Contents/Info.plist</string>
                 </dict>
@@ -401,38 +447,7 @@
             <key>Force</key>
             <array/>
             <key>Patch</key>
-            <array>
-                <dict>
-                    <key>Arch</key>
-                    <string>Any</string>
-                    <key>Base</key>
-                    <string>__Z18e1000_set_mac_typeP8e1000_hw</string>
-                    <key>Comment</key>
-                    <string>I225-V patch</string>
-                    <key>Count</key>
-                    <integer>0</integer>
-                    <key>Enabled</key>
-                    <false/>
-                    <key>Find</key>
-                    <data>8hUAAA==</data>
-                    <key>Identifier</key>
-                    <string>com.apple.driver.AppleIntelI210Etherne</string>
-                    <key>Limit</key>
-                    <integer>0</integer>
-                    <key>Mask</key>
-                    <data></data>
-                    <key>MaxKernel</key>
-                    <string></string>
-                    <key>MinKernel</key>
-                    <string>19.0.0</string>
-                    <key>Replace</key>
-                    <data>8xUAAA==</data>
-                    <key>ReplaceMask</key>
-                    <data></data>
-                    <key>Skip</key>
-                    <integer>0</integer>
-                </dict>
-            </array>
+            <array/>
             <key>Quirks</key>
             <dict>
                 <key>AppleCpuPmCfgLock</key>
@@ -454,7 +469,7 @@
                 <key>DisableRtcChecksum</key>
                 <false/>
                 <key>ExtendBTFeatureFlags</key>
-                <false/>
+                <true/>
                 <key>ExternalDiskIcons</key>
                 <false/>
                 <key>ForceAquantiaEthernet</key>
@@ -478,7 +493,7 @@
                 <key>ThirdPartyDrives</key>
                 <false/>
                 <key>XhciPortLimit</key>
-                <true/>
+                <false/>
             </dict>
             <key>Scheme</key>
             <dict>
@@ -730,6 +745,8 @@
                 <dict>
                     <key>DefaultBackgroundColor</key>
                     <data>AAAAAA==</data>
+                    <key>UIScale</key>
+                    <data>AQ==</data>
                 </dict>
                 <key>4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102</key>
                 <dict>
@@ -738,18 +755,14 @@
                 </dict>
                 <key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
                 <dict>
-                    <key>#INFO (prev-lang:kbd)</key>
-                    <string>en:252 (ABC), set 656e3a323532</string>
-                    <key>ForceDisplayRotationInEFI</key>
-                    <integer>0</integer>
                     <key>SystemAudioVolume</key>
                     <data>Rg==</data>
                     <key>boot-args</key>
-                    <string>-v keepsyms=1 debug=0x100</string>
+                    <string>-v debug=0x100 -no_compat_check -lilubetaall -wegbeta -alcbeta agdpmod=pikera</string>
                     <key>csr-active-config</key>
                     <data>AAAAAA==</data>
                     <key>prev-lang:kbd</key>
-                    <string>cnUtUlU6MjUy</string>
+                    <string>zh-Hans:252</string>
                     <key>run-efi-updater</key>
                     <string>No</string>
                 </dict>
@@ -758,6 +771,7 @@
             <dict>
                 <key>4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14</key>
                 <array>
+                    <string>UIScale</string>
                     <string>DefaultBackgroundColor</string>
                 </array>
                 <key>4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102</key>
@@ -767,11 +781,8 @@
                 <key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
                 <array>
                     <string>boot-args</string>
-                    <string>ForceDisplayRotationInEFI</string>
                 </array>
             </dict>
-            <key>LegacyEnable</key>
-            <false/>
             <key>LegacyOverwrite</key>
             <false/>
             <key>LegacySchema</key>
@@ -828,7 +839,7 @@
                 <key>SystemMemoryStatus</key>
                 <string>Auto</string>
                 <key>SystemProductName</key>
-                <string>iMac20,2</string>
+                <string>iMac20,1</string>
                 <key>SystemSerialNumber</key>
                 <string>W00000000001</string>
                 <key>SystemUUID</key>
@@ -896,11 +907,11 @@
                 <key>AudioCodec</key>
                 <integer>0</integer>
                 <key>AudioDevice</key>
-                <string>PciRoot(0x0)/Pci(0x1b,0x0)</string>
+                <string>PciRoot(0x0)/Pci(0x1F,0x3)</string>
                 <key>AudioOutMask</key>
                 <integer>1</integer>
                 <key>AudioSupport</key>
-                <false/>
+                <true/>
                 <key>DisconnectHda</key>
                 <false/>
                 <key>MaximumGain</key>
